@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+      body {
+        background-color: #ddf0e2;
+      }
+      .inputcontainer{
+	  text-align: center;
+	  margin-bottom: 20px;
+      }
+      #num {
+	  width: 30%;
+	  padding: 10px;
+	  border-radius: 5px;
+	  border: 1px solid #ccc;
+	  font-size: 1.2em;
+	  text-align: center;
+      }
+      
+	#testbtn {
+	  padding: 10px;
+	  border: none;
+	  outline: none;
+	  background-color: #29a64b;
+	  color: white;
+	  font-size: 1.2em;
+	}
+
+	.btncontainer {
+  	  text-align: center;
+
+	}
+
+	#result {
+	  font-size: 4em;
+	  text-align: center;
+	  margin-top: 180px;
+	  font-family: Tahoma;
+	  color: #0d521f;
+	}
+    </style>
+
+  </head>
+
+  <body>
+
+
+    <div class="inputcontainer">
+    <input id="num" type="text">
+    </div>
+
+    <div class="btncontainer">
+    <button id="testbtn">Test</button>
+    </div>
+
+    <div id="result"></div>
+
+
+    <script>
+
+
+      function isPrime(n){
+        var i = 1;
+        var c = 0;
+
+        while(i <= n){
+          if(n % i == 0){
+            c += 1;
+          }
+
+          i += 1;
+        }
+
+        if (c == 2){
+          return true;
+        }
+        else{
+          return false;
+        }
+
+      }
+
+
+      document.getElementById("testbtn").addEventListener("click", function(){
+
+
+        var num = document.getElementById("num").value;
+
+        if(isPrime(Number(num))){
+    	  document.getElementById("result").innerHTML = "Prime";
+        }
+        else{
+    	  document.getElementById("result").innerHTML = "Not Prime";
+        }
+
+
+      });
+      
+      
+
+
+    </script>
+
+
+  </body>
+
+
+</html>
